@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../images/frog-background.jpg");
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  height: auto;
+  flex-grow: 1;
+  margin-left: 100px;
+  margin-bottom: 200px;
+  width: 500px;
+}
+.home-shop-now-btn {
+  font-size: 48px;
+  width: 500px;
+  padding: 24px;
+  border-radius: 48px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.small-main-text {
+  color: rgb(221, 208, 90);
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.big-main-text {
+  font-size: 48px;
+  margin-bottom: 48px;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+}
