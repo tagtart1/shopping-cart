@@ -1,0 +1,17 @@
+.catalog-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  gap: 200px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 36px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

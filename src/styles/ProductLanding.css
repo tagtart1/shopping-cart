@@ -1,0 +1,27 @@
+.quantity-group {
+  display: flex;
+  gap: 24px;
+  margin-left: 12px;
+}
+
+.quantity-selector {
+  display: flex;
+  flex-direction: column;
+  width: 75px;
+  border-radius: 6px;
+  border: black solid 2px;
+  padding: 0px 12px;
+}
+
+label {
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+select {
+  outline: none;
+  border: none;
+  margin: 0;
+  font-size: 18px;
+  width: 100%;
+}

@@ -1,0 +1,48 @@
+.filter-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 300px;
+}
+
+.current-filter-text {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.directory-text {
+  font-size: 20px;
+}
+
+.filter-names {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-names li {
+  cursor: pointer;
+  font-size: 24px;
+  position: relative;
+}
+
+.filter-names li::after {
+  content: "";
+  position: absolute;
+  width: 75%;
+  transform: scaleX(0);
+  height: 8px;
+  bottom: 6px;
+  left: 0;
+  background-color: rgba(145, 145, 145, 0.253);
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+
+.filter-names li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

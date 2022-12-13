@@ -13,7 +13,7 @@ body {
   color: white;
   height: auto;
   flex-grow: 1;
-  margin-left: 100px;
+  margin-left: 140px;
   margin-bottom: 200px;
   width: 500px;
 }
@@ -24,6 +24,12 @@ body {
   border-radius: 48px;
   font-weight: bolder;
   cursor: pointer;
+
+  transition: all 0.3s;
+}
+
+.home-shop-now-btn:hover {
+  transform: scale(1.05);
 }
 
 .small-main-text {

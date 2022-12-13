@@ -1,0 +1,13 @@
+.product-card {
+  cursor: pointer;
+}
+
+img {
+  width: 325px;
+  height: 325px;
+}
+
+.product-name {
+  font-size: 28px;
+  font-weight: 300;
+}

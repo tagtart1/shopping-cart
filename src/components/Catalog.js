@@ -1,7 +1,68 @@
-import { React } from "react";
+import { React, useState } from "react";
+import "../styles/Catalog.css";
+import FilterSelector from "./FilterSelector";
+import ProductCard from "./ProductCard";
+import ProductList from "./ProductList";
+import { Link } from "react-router-dom";
 
 const Catalog = () => {
-  return <div>Testing Catalog</div>;
+  const [currentFilter, setCurrentFilter] = useState("allproducts");
+  const [currentFilterText, setCurrentFilterText] = useState("All Products");
+
+  const changeProductFilter = (e) => {
+    const filter = e.target.textContent.toLowerCase().replace(" ", "");
+    setCurrentFilter(filter);
+
+    setCurrentFilterText(e.target.textContent);
+  };
+
+  return (
+    <div className="catalog-container">
+      <FilterSelector
+        changeProductFilter={changeProductFilter}
+        currentFilter={currentFilterText}
+      />
+      <div className="products-container">
+        {currentFilter !== "allproducts"
+          ? ProductList[currentFilter].map((item) => {
+              return (
+                <Link
+                  key={item.id}
+                  to={`${item.name.replace(" ", "-").toLowerCase()}`}
+                  state={{ img: item.img, name: item.name, price: item.price }}
+                >
+                  <ProductCard
+                    img={item.img}
+                    name={item.name}
+                    price={item.price}
+                  />
+                </Link>
+              );
+            })
+          : Object.keys(ProductList).map((property) => {
+              return ProductList[property].map((item) => {
+                return (
+                  <Link
+                    key={item.id}
+                    to={`${item.name.replace(" ", "-").toLowerCase()}`}
+                    state={{
+                      img: item.img,
+                      name: item.name,
+                      price: item.price,
+                    }}
+                  >
+                    <ProductCard
+                      img={item.img}
+                      name={item.name}
+                      price={item.price}
+                    />
+                  </Link>
+                );
+              });
+            })}
+      </div>
+    </div>
+  );
 };
 
 export default Catalog;
