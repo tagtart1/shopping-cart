@@ -1,0 +1,35 @@
+.shopping-cart {
+  position: fixed;
+  color: black;
+  font-weight: bold;
+  font-size: 44px;
+  display: flex;
+  align-items: center;
+  padding-top: 48px;
+  flex-direction: column;
+  width: 600px;
+  background-color: white;
+  height: 100vh;
+
+  z-index: 2;
+}
+
+.close-cart-button {
+  border: none;
+  font-size: 24px;
+  background-color: transparent;
+  font-weight: bold;
+  align-self: flex-end;
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+.browse-more-btn {
+  background-color: #69816e;
+  border: none;
+  border-radius: 6px;
+  font-size: 36px;
+  color: white;
+  padding: 8px 36px;
+  font-weight: bold;
+}

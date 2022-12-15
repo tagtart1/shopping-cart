@@ -29,7 +29,12 @@ const Catalog = () => {
                 <Link
                   key={item.id}
                   to={`${item.name.replace(" ", "-").toLowerCase()}`}
-                  state={{ img: item.img, name: item.name, price: item.price }}
+                  state={{
+                    img: item.img,
+                    name: item.name,
+                    price: item.price,
+                    id: item.id,
+                  }}
                 >
                   <ProductCard
                     img={item.img}
@@ -49,6 +54,7 @@ const Catalog = () => {
                       img: item.img,
                       name: item.name,
                       price: item.price,
+                      id: item.id,
                     }}
                   >
                     <ProductCard

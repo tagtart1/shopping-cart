@@ -2,7 +2,7 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import "../styles/MainNav.css";
 
-const MainNav = () => {
+const MainNav = (props) => {
   const toggleCatalogStyle = () => {
     const navLinks = document.querySelectorAll(".link-item");
     navLinks.forEach((link) => {
@@ -19,6 +19,10 @@ const MainNav = () => {
       link.style.color = "white";
       link.classList.remove("catalog-underline");
     });
+  };
+
+  const showCart = () => {
+    props.toggleDisplayCart();
   };
 
   return (
@@ -40,6 +44,9 @@ const MainNav = () => {
           >
             Products
           </Link>
+        </li>
+        <li>
+          <button onClick={showCart}>Cart</button>
         </li>
       </ul>
     </nav>
