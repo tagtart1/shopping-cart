@@ -4,13 +4,13 @@
   font-weight: bold;
   font-size: 44px;
   display: flex;
-  align-items: center;
+
   padding-top: 48px;
   flex-direction: column;
   width: 600px;
   background-color: white;
   height: 100vh;
-
+  padding: 48px 64px;
   z-index: 2;
 }
 
@@ -20,7 +20,7 @@
   background-color: transparent;
   font-weight: bold;
   align-self: flex-end;
-  margin-right: 24px;
+
   cursor: pointer;
 }
 
@@ -32,4 +32,5 @@
   color: white;
   padding: 8px 36px;
   font-weight: bold;
+  text-align: center;
 }

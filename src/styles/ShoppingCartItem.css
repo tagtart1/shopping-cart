@@ -1,0 +1,18 @@
+.cart-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 84px;
+}
+
+.cart-item-details {
+  font-size: 24px;
+}
+.cart-img {
+  width: 125px;
+  height: 125px;
+}
+
+.quantity-adjust {
+  display: flex;
+}

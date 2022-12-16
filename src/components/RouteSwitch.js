@@ -9,21 +9,17 @@ import FocusBackground from "./FocusBackground";
 
 const RouteSwitch = () => {
   const [displayCart, setDisplayCart] = useState(false);
-  const [cart, setCart] = useState([]);
+  const [itemToAdd, setItemToAdd] = useState();
 
   const toggleDisplayCart = () => {
     setDisplayCart(!displayCart);
   };
 
   const addToCart = (item) => {
-    const newCart = [...cart];
-    newCart.push(item);
-    setCart(newCart);
+    const newItem = item;
+    console.log(newItem);
+    setItemToAdd(newItem);
   };
-
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
 
   return (
     <BrowserRouter>
@@ -32,6 +28,7 @@ const RouteSwitch = () => {
       <ShoppingCart
         toggleDisplayCart={toggleDisplayCart}
         isVisible={displayCart}
+        newItem={itemToAdd}
       />
 
       <FocusBackground

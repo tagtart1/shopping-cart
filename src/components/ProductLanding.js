@@ -10,8 +10,8 @@ const ProductLanding = (props) => {
     const quantity = document.getElementById("quantity").value;
 
     const cartItem = {
-      quantity: quantity,
-      price: price,
+      quantity: Number(quantity),
+      price: Number(price.replace("$", "")),
       img: img,
       name: name,
       totalCost: Number(price.replace("$", "")) * Number(quantity),
