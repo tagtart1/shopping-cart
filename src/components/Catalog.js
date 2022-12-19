@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import "../styles/Catalog.css";
 import FilterSelector from "./FilterSelector";
 import ProductCard from "./ProductCard";
@@ -15,6 +15,17 @@ const Catalog = () => {
 
     setCurrentFilterText(e.target.textContent);
   };
+
+  useEffect(() => {
+    const navLinks = document.querySelectorAll(".link-item");
+    const cartIcon = document.querySelector(".cart-icon");
+    navLinks.forEach((link) => {
+      link.style.color = "#b8d8be";
+      link.classList.add("catalog-underline");
+    });
+    document.body.style.background = "none";
+    cartIcon.classList.add("icon-catalog");
+  }, []);
 
   return (
     <div className="catalog-container">

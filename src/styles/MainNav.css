@@ -22,6 +22,7 @@
   list-style: none;
   font-size: 24px;
   font-weight: bold;
+  align-items: center;
 }
 
 .link-item {
@@ -50,4 +51,39 @@
 .tab.link-item:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.cart-icon {
+  width: 35px;
+  height: 35px;
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(155deg)
+    brightness(104%) contrast(101%);
+}
+
+.icon-catalog {
+  filter: invert(91%) sepia(29%) saturate(203%) hue-rotate(70deg)
+    brightness(90%) contrast(86%);
+}
+
+.cart-btn {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  position: relative;
+}
+
+.quantity-cart-display {
+  position: absolute;
+
+  background-color: rgb(27, 90, 28);
+  color: white;
+
+  border-radius: 100%;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -2px;
+  right: -5px;
 }

@@ -13,6 +13,7 @@ const ShoppingCartItem = (props) => {
         <div>{props.item.name}</div>
         <div className="quantity-adjust">
           <button
+            className="quantity-change-btn"
             onClick={() => {
               props.decrementItemQuantity(props.item.id);
             }}
@@ -21,6 +22,7 @@ const ShoppingCartItem = (props) => {
           </button>
           <div>{props.item.quantity}</div>
           <button
+            className="quantity-change-btn"
             onClick={() => {
               props.incrementItemQuantity(props.item.id);
             }}

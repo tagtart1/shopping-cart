@@ -1,5 +1,6 @@
 import "../styles/Home.css";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function Home() {
   const toggleCatalogStyle = () => {
@@ -10,6 +11,17 @@ function Home() {
     });
     document.body.style.background = "none";
   };
+
+  useEffect(() => {
+    document.body.style.removeProperty("background");
+    const navLinks = document.querySelectorAll(".link-item");
+    const cartIcon = document.querySelector(".cart-icon");
+    navLinks.forEach((link) => {
+      link.style.color = "white";
+      link.classList.remove("catalog-underline");
+    });
+    cartIcon.classList.remove("icon-catalog");
+  }, []);
 
   return (
     <div className="home">

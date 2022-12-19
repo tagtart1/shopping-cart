@@ -6,6 +6,7 @@ import ShoppingCartItem from "./ShoppingCartItem";
 
 const ShoppingCart = (props) => {
   const [cart, setCart] = useState([]);
+  const [subtotal, setSubtotal] = useState(0.0);
 
   const hideCartDisplay = (e) => {
     props.toggleDisplayCart();
@@ -24,10 +25,13 @@ const ShoppingCart = (props) => {
         isDone = true;
       }
     });
+    setSubtotal(
+      Number((subtotal + itemToAdd.quantity * itemToAdd.price).toFixed(2))
+    );
+    console.log(getCartQuantity());
 
     if (isDone) return;
     cartCopy.push(itemToAdd);
-    console.log(cartCopy);
     setCart(cartCopy);
   };
 
@@ -37,9 +41,19 @@ const ShoppingCart = (props) => {
       if (item.id === itemId) {
         item.quantity += 1;
         item.totalCost = item.quantity * item.price;
+        setSubtotal(Number((subtotal + item.price).toFixed(2)));
         setCart(cartCopy);
       }
     });
+  };
+
+  const getCartQuantity = () => {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.quantity;
+    });
+
+    return total;
   };
 
   const decrementItemQuantity = (itemId) => {
@@ -48,6 +62,7 @@ const ShoppingCart = (props) => {
       if (item.id === itemId) {
         item.quantity -= 1;
         item.totalCost = item.quantity * item.price;
+        setSubtotal(Number((subtotal - item.price).toFixed(2)));
         // Remove from cart at 0 quantity
         if (item.quantity <= 0) {
           cartCopy.splice(index, 1);
@@ -60,6 +75,10 @@ const ShoppingCart = (props) => {
   useEffect(() => {
     combineSimilarItems(props.newItem);
   }, [props.newItem]);
+
+  useEffect(() => {
+    props.setCartQuantity(getCartQuantity());
+  }, [cart]);
 
   return (
     <AnimatePresence>
@@ -76,23 +95,45 @@ const ShoppingCart = (props) => {
             ✖
           </button>
           <div>Your Shopping Cart</div>
-          {cart.map((item) => {
-            return (
-              <ShoppingCartItem
-                key={item.id}
-                item={item}
-                incrementItemQuantity={incrementItemQuantity}
-                decrementItemQuantity={decrementItemQuantity}
-              />
-            );
-          })}
-          <Link
-            to={"/catalog"}
-            className="browse-more-btn"
-            onClick={hideCartDisplay}
-          >
-            BROWSE MORE
-          </Link>
+          <div className="cart-items">
+            {getCartQuantity() < 1 ? (
+              <div className="empty-cart-text">Your cart is empty.</div>
+            ) : (
+              cart.map((item) => {
+                return (
+                  <ShoppingCartItem
+                    key={item.id}
+                    item={item}
+                    incrementItemQuantity={incrementItemQuantity}
+                    decrementItemQuantity={decrementItemQuantity}
+                  />
+                );
+              })
+            )}
+          </div>
+
+          {getCartQuantity() < 1 ? (
+            <div className="bottom-group empty">
+              <Link
+                to={"/catalog"}
+                className="browse-more-btn"
+                onClick={hideCartDisplay}
+              >
+                BROWSE MORE
+              </Link>
+            </div>
+          ) : (
+            <div className="bottom-group fill">
+              <div className="subtotal-text">Subtotal: ${subtotal}</div>
+              <Link
+                to={"/catalog"}
+                className="browse-more-btn"
+                onClick={hideCartDisplay}
+              >
+                CHECKOUT
+              </Link>
+            </div>
+          )}
         </motion.div>
       )}
     </AnimatePresence>
