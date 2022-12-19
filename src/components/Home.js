@@ -16,11 +16,16 @@ function Home() {
     document.body.style.removeProperty("background");
     const navLinks = document.querySelectorAll(".link-item");
     const cartIcon = document.querySelector(".cart-icon");
+    const cartQuantity = document.querySelector(".quantity-cart-display");
     navLinks.forEach((link) => {
       link.style.color = "white";
       link.classList.remove("catalog-underline");
     });
     cartIcon.classList.remove("icon-catalog");
+    if (cartQuantity) {
+      cartQuantity.classList.remove("cart-quantity-catalog");
+      cartQuantity.classList.add("cart-quantity-home");
+    }
   }, []);
 
   return (

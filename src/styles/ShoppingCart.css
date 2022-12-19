@@ -13,7 +13,7 @@
   padding: 48px 64px;
   z-index: 2;
 
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .empty-cart-text,
@@ -65,4 +65,16 @@
   flex-direction: column;
   gap: 36px;
   margin-bottom: 16px;
+}
+
+.empty-cart-img {
+  width: 125px;
+  height: 125px;
+  align-self: center;
+  filter: invert(88%) sepia(0%) saturate(90%) hue-rotate(146deg) brightness(91%)
+    contrast(84%);
+  user-select: none;
+
+  position: absolute;
+  top: 50%;
 }

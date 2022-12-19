@@ -75,9 +75,6 @@
 .quantity-cart-display {
   position: absolute;
 
-  background-color: rgb(27, 90, 28);
-  color: white;
-
   border-radius: 100%;
   height: 24px;
   width: 24px;
@@ -86,4 +83,14 @@
   align-items: center;
   top: -2px;
   right: -5px;
+}
+
+.cart-quantity-home {
+  background-color: white;
+  color: rgb(0, 0, 0);
+}
+
+.cart-quantity-catalog {
+  background-color: rgb(27, 90, 28);
+  color: white;
 }

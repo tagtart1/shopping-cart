@@ -8,6 +8,10 @@ const MainNav = (props) => {
     props.toggleDisplayCart();
   };
 
+  const display = {
+    display: "none",
+  };
+
   return (
     <nav className="main-nav">
       <Link className="link-item h1" to={"/"}>
@@ -27,7 +31,11 @@ const MainNav = (props) => {
         <li>
           <button onClick={showCart} className="cart-btn">
             <img className="cart-icon" src={cartIcon} alt="Shopping Bag"></img>
-            {props.cartQuantity < 1 ? null : (
+            {props.cartQuantity < 1 ? (
+              <div className="quantity-cart-display" style={display}>
+                {props.cartQuantity}
+              </div>
+            ) : (
               <div className="quantity-cart-display">{props.cartQuantity}</div>
             )}
           </button>

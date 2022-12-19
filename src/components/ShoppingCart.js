@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/ShoppingCart.css";
 import { motion, AnimatePresence } from "framer-motion";
 import ShoppingCartItem from "./ShoppingCartItem";
+import frogIcon from "../images/cart-frog.svg";
 
 const ShoppingCart = (props) => {
   const [cart, setCart] = useState([]);
@@ -114,6 +115,11 @@ const ShoppingCart = (props) => {
 
           {getCartQuantity() < 1 ? (
             <div className="bottom-group empty">
+              <img
+                className="empty-cart-img"
+                src={frogIcon}
+                alt="Sad Frog"
+              ></img>
               <Link
                 to={"/catalog"}
                 className="browse-more-btn"

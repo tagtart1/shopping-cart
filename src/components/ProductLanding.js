@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import "../styles/ProductLanding.css";
 
@@ -20,6 +20,23 @@ const ProductLanding = (props) => {
 
     props.addToCart(cartItem);
   };
+
+  useEffect(() => {
+    //Initial Page Styles Setup
+    const navLinks = document.querySelectorAll(".link-item");
+    const cartIcon = document.querySelector(".cart-icon");
+    const cartQuantity = document.querySelector(".quantity-cart-display");
+    navLinks.forEach((link) => {
+      link.style.color = "#b8d8be";
+      link.classList.add("catalog-underline");
+    });
+    document.body.style.background = "none";
+    cartIcon.classList.add("icon-catalog");
+    if (cartQuantity) {
+      cartQuantity.classList.add("cart-quantity-catalog");
+      cartQuantity.classList.remove("cart-quantity-home");
+    }
+  }, []);
 
   return (
     <div className="product-landing">

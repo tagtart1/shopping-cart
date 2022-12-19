@@ -26,7 +26,7 @@ const productList = {
       id: uniqid(),
     },
     {
-      name: "Hairy Frog jimmy",
+      name: "Hairy Frog",
       price: "$16.99",
       img: hairyFrog,
       id: uniqid(),

@@ -19,12 +19,17 @@ const Catalog = () => {
   useEffect(() => {
     const navLinks = document.querySelectorAll(".link-item");
     const cartIcon = document.querySelector(".cart-icon");
+    const cartQuantity = document.querySelector(".quantity-cart-display");
     navLinks.forEach((link) => {
       link.style.color = "#b8d8be";
       link.classList.add("catalog-underline");
     });
     document.body.style.background = "none";
     cartIcon.classList.add("icon-catalog");
+    if (cartQuantity) {
+      cartQuantity.classList.add("cart-quantity-catalog");
+      cartQuantity.classList.remove("cart-quantity-home");
+    }
   }, []);
 
   return (
