@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component Renders page correctly 1`] = `
+<div>
+  <div
+    class="home"
+  >
+    <p
+      class="small-main-text"
+    >
+      ONE OF THE FROG STORES OF ALL TIME
+    </p>
+    <p
+      class="big-main-text"
+    >
+      Get the best frogs, the frog juice, and more frogs
+    </p>
+    <a
+      href="/catalog"
+    >
+      <button
+        class="home-shop-now-btn"
+        type="button"
+      >
+        Shop Now
+      </button>
+    </a>
+  </div>
+</div>
+`;

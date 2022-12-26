@@ -25,7 +25,7 @@ const Catalog = () => {
       link.classList.add("catalog-underline");
     });
     document.body.style.background = "none";
-    cartIcon.classList.add("icon-catalog");
+    if (cartIcon) cartIcon.classList.add("icon-catalog");
     if (cartQuantity) {
       cartQuantity.classList.add("cart-quantity-catalog");
       cartQuantity.classList.remove("cart-quantity-home");

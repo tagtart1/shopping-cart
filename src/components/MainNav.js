@@ -1,5 +1,6 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
+
 import "../styles/MainNav.css";
 import cartIcon from "../images/shopping-bag-icon.svg";
 
@@ -36,7 +37,12 @@ const MainNav = (props) => {
                 {props.cartQuantity}
               </div>
             ) : (
-              <div className="quantity-cart-display">{props.cartQuantity}</div>
+              <div
+                className="quantity-cart-display"
+                data-testid="cart-quantity"
+              >
+                {props.cartQuantity}
+              </div>
             )}
           </button>
         </li>

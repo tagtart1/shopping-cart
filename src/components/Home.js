@@ -3,15 +3,6 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 function Home() {
-  const toggleCatalogStyle = () => {
-    const navLinks = document.querySelectorAll(".link-item");
-    navLinks.forEach((link) => {
-      link.style.color = "#b8d8be";
-      link.classList.add("catalog-underline");
-    });
-    document.body.style.background = "none";
-  };
-
   useEffect(() => {
     document.body.style.removeProperty("background");
     const navLinks = document.querySelectorAll(".link-item");
@@ -21,7 +12,7 @@ function Home() {
       link.style.color = "white";
       link.classList.remove("catalog-underline");
     });
-    cartIcon.classList.remove("icon-catalog");
+    if (cartIcon) cartIcon.classList.remove("icon-catalog");
     if (cartQuantity) {
       cartQuantity.classList.remove("cart-quantity-catalog");
       cartQuantity.classList.add("cart-quantity-home");
@@ -35,11 +26,7 @@ function Home() {
         Get the best frogs, the frog juice, and more frogs
       </p>
       <Link to={"/catalog"}>
-        <button
-          type="button"
-          className="home-shop-now-btn"
-          onClick={toggleCatalogStyle}
-        >
+        <button type="button" className="home-shop-now-btn">
           Shop Now
         </button>
       </Link>

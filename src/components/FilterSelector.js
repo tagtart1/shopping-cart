@@ -6,7 +6,9 @@ const FilterSelector = (props) => {
     <div className="filter-selector">
       <div className="current-filter">
         <p className="directory-text">Shop /</p>
-        <p className="current-filter-text">{props.currentFilter}</p>
+        <p className="current-filter-text" data-testid="current-filter">
+          {props.currentFilter}
+        </p>
       </div>
       <ul className="filter-names">
         <li onClick={props.changeProductFilter}>All Products</li>
