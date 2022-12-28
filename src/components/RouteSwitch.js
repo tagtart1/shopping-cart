@@ -24,7 +24,7 @@ const RouteSwitch = () => {
   };
 
   return (
-    <BrowserRouter basename="/poop">
+    <BrowserRouter basename="/shopping-cart">
       <MainNav
         toggleDisplayCart={toggleDisplayCart}
         cartQuantity={cartQuantity}
