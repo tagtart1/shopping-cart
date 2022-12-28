@@ -15,12 +15,12 @@ const MainNav = (props) => {
 
   return (
     <nav className="main-nav">
-      <Link className="link-item h1" to={"/"}>
+      <Link className="link-item h1" to={"/shopping-cart"}>
         Frog Market
       </Link>
       <ul className="nav-links">
         <li>
-          <Link className="link-item tab" to={"/"}>
+          <Link className="link-item tab" to={"/shopping-cart"}>
             Home
           </Link>
         </li>
