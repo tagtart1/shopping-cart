@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.1a4a2987.css",
+    "main.js": "/shopping-cart/static/js/main.28b6bd4c.js",
+    "static/media/hairyfrog.png": "/shopping-cart/static/media/hairyfrog.1faf6280744ca1a31320.png",
+    "static/media/frog-background.jpg": "/shopping-cart/static/media/frog-background.6e57016ba6a9476b0d35.jpg",
+    "static/media/Poppins-Regular.ttf": "/shopping-cart/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-Medium.ttf": "/shopping-cart/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
+    "static/media/Poppins-Black.ttf": "/shopping-cart/static/media/Poppins-Black.d8b850b920a5ef49d752.ttf",
+    "static/media/coconut.jpg": "/shopping-cart/static/media/coconut.38545cd7b1694ef29f57.jpg",
+    "static/media/cowboyhat.jpg": "/shopping-cart/static/media/cowboyhat.b0847b70804b4f4eeed8.jpg",
+    "static/media/santahat.jpg": "/shopping-cart/static/media/santahat.1f68577d3c4570e68aac.jpg",
+    "static/media/guppy.jpeg": "/shopping-cart/static/media/guppy.9c6781212572f6b8dd1f.jpeg",
+    "static/media/tophat.jpg": "/shopping-cart/static/media/tophat.8d59b217efeb5e35dba6.jpg",
+    "static/media/cart-frog.svg": "/shopping-cart/static/media/cart-frog.5b68cf820bbfc2965414929c0d8766cf.svg",
+    "static/media/shopping-bag-icon.svg": "/shopping-cart/static/media/shopping-bag-icon.b448807984f65a745529291841f3cc22.svg",
+    "index.html": "/shopping-cart/index.html",
+    "main.1a4a2987.css.map": "/shopping-cart/static/css/main.1a4a2987.css.map",
+    "main.28b6bd4c.js.map": "/shopping-cart/static/js/main.28b6bd4c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a4a2987.css",
+    "static/js/main.28b6bd4c.js"
+  ]
+}
